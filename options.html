@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vimuim Helper Options</title>
+    <style>
+        body {
+            padding: 10px;
+        }
+        div {
+            margin-bottom: 10px;
+        }
+        div#status {
+            color: darkgreen;
+            background-color: beige;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="status"></div>
+<div>
+    <label for="blacklist">Disable Vimuim Helper on (one pattern per line):</label>
+</div>
+<div>
+    <textarea rows="10" cols="50" id="blacklist"></textarea>
+</div>
+<div>
+    <button id="save">Save</button>
+</div>
+
+<script src="options.js"></script>
+</body>
+</html>
