@@ -12,7 +12,7 @@
     function labelClickables() {
         let tags = ['a', 'link', 'script', 'iframe', 'button', 'textarea', 'input', 'select', 'details', 'button'];
         let roles = ['button' , 'tab' , 'link', 'checkbox', 'menuitem', 'menuitemcheckbox', 'menuitemradio'];
-        let selector = ':not('+tags.join('):not(')+'):not([role="'+roles.join('"]):not([role="')+"\"]):not([onclick])";
+        let selector = ':not('+tags.join('):not(')+'):not([role="'+roles.join('"]):not([role="')+"\"]):not([onclick]):not([jsaction])";
         let elements = document.body.querySelectorAll(selector);
 
         for (let i = 0; i < elements.length; i++) {
