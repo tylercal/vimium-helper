@@ -9,7 +9,18 @@
 
     let config = {childList: true, subtree: true};
 
+    let lastCallTime = null;
+    let callInterval = 1;
+
     function labelClickables() {
+        let callTime = new Date().getTime();
+        if (lastCallTime !== null && callTime - lastCallTime < callInterval) {
+            return; // rate limit
+        } else {
+            lastCallTime = callTime;
+            if (callInterval < 65536) callInterval *= 2; // max rate limit of ~1x/min
+        }
+
         let tags = ['a', 'link', 'script', 'iframe', 'button', 'textarea', 'input', 'select', 'details', 'button'];
         let roles = ['button' , 'tab' , 'link', 'checkbox', 'menuitem', 'menuitemcheckbox', 'menuitemradio'];
         let selector = ':not('+tags.join('):not(')+'):not([role="'+roles.join('"]):not([role="')+"\"]):not([onclick]):not([jsaction])";
