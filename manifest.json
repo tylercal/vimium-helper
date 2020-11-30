@@ -3,7 +3,7 @@
 
   "name": "Vimium Helper",
   "description": "Let Vimuim see even more elements to add click hints to.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "offline_enabled": true,
 
   "icons": {

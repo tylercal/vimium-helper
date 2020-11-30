@@ -43,7 +43,7 @@
         }, function(items) {
             let patterns = items.blacklist.split("\n");
             for (let i = 0; i < patterns.length; i++) {
-                if (document.URL.indexOf(patterns[i]) > 0) {
+                if (document.URL.indexOf(patterns[i]) >= 0) {
                     return;
                 }
             }
