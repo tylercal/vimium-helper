@@ -42,8 +42,8 @@
             blacklist: ''
         }, function(items) {
             let patterns = items.blacklist.split("\n");
-            for (let i = 0; i < patterns.length; i++) {
-                if (document.URL.indexOf(patterns[i]) >= 0) {
+            for (const item of patterns) {
+                if (item.length > 0 && document.URL.indexOf(item) >= 0) {
                     return;
                 }
             }
